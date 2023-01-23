@@ -2,7 +2,38 @@
 
 <head>
     <title>first webpage</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 4px;
+        }
+
+        .content {
+            box-shadow: 2px 1px 10px black;
+            margin: 30px;
+            padding: 20px;
+            font-size: 30px;
+            width: max-content;
+        }
+
+        .innerTitle {
+            font-weight: bold;
+            box-shadow: 2px 1px 10px black;
+            border-radius: 16px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background: linear-gradient(rgb(170, 27, 27), rgb(7, 13, 68));
+        }
+
+        .speakerName {
+            font-style: italic;
+        }
+    </style>
 </head>
+
 <body dir="rtl">
     <header>
         <h1>ברוכים הבאים</h1>
@@ -35,7 +66,7 @@
         </table>
         <div class="content">
             <div class="innerTitle">
-                <h3>ההרצאה על ענבים צלויות</h3>
+                <p>ההרצאה על ענביים צלויות</p>
             </div>
             <div class="speakerName">
                 פרופסור ענבי
@@ -46,8 +77,11 @@
         </div>
     </main>
     <footer>
-
+        <button type="button" onclick="document.getElementById('text').innerHTML = 'Hello'">Say hello</button>
     </footer>
+    <p id="text">
+
+    </p>
 </body>
 
 </html>
