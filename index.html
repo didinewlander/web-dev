@@ -2,138 +2,19 @@
 
 <head>
     <title>first webpage</title>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 4px;
-        }
-
-        .content {
-            box-shadow: 2px 1px 10px black;
-            margin: 30px;
-            padding: 20px;
-            font-size: 30px;
-            width: max-content;
-        }
-
-        .innerTitle {
-            font-weight: bold;
-            box-shadow: 2px 1px 10px black;
-            border-radius: 16px;
-            text-align: center;
-            color: rgb(255, 255, 255);
-            background: linear-gradient(rgb(170, 27, 27), rgb(7, 13, 68));
-        }
-
-        .speakerName {
-            font-style: italic;
-        }
-    </style>
 </head>
 
 <body dir="rtl">
-    <!-- <header>
-        <h1>ברוכים הבאים</h1>
-    </header>
-    <main>
-        <table>
-            <tr>
-                <th>מקצוע</th>
-                <th>מועד</th>
-                <th>ציון</th>
-            </tr>
-            <tr>
-                <td>
-                    מקלדות ומתכנתים
-                </td>
-                <td>
-                    א
-                </td>
-                <td>87</td>
-            </tr>
-            <tr>
-                <td>
-                    בישול קוד
-                </td>
-                <td>
-                    2
-                </td>
-                <td>99</td>
-            </tr>
-        </table>
-        <div class="content">
-            <div class="innerTitle">
-                <p>ההרצאה על ענביים צלויות</p>
-            </div>
-            <div class="speakerName">
-                פרופסור ענבי
-            </div>
-            <div class="information">
-                ענבים צלויות הן מעדן של ממש
-            </div>
-        </div>
-    </main>
-    <footer>
-        <button type="button" onclick="document.getElementById('text').innerHTML = 'Hello'">Say hello</button>
-    </footer>
-    <p id="text">
-
-    </p> -->
-
-    <h1 id="title">כותרת</h1>
-    <button onclick="switchText()" id="button">לחץ</button>
-    <div class="container" id="container"></div>
-    <div class="alert" id="alert"></div>
-
-
+    <label for="name">שם:
+        <input type="text" id="name">
+    </label>
+    <p id="alert">יש להשתמש בשם הארוך מאות אחת</p>
     <script>
-        let array = ["אבי", "יוסי", "ברוך"]; // array[3] => 0,1,2
-        let colors = ["black", "red", "green", "yellow", "purple"];
-        let counter = -1;
-        let colorPlace = -1;
-        function switchText() {
-            if (counter < array.length - 1) {
-                counter++;
-            }
-            else {
-                counter = 0;
-            }
-            const title = document.getElementById('title').innerHTML = array[counter];
-
-            const container = document.getElementById('container');
-            const newElement = document.createElement('p');
-            const div = document.createElement('div');
-            if (colorPlace < colors.length - 1) {
-                colorPlace++;
-            }
-            else {
-                colorPlace = 0;
-            }
-            newElement.innerHTML = array[counter];
-            newElement.style = `color:${colors[colorPlace]}`;
-            div.append(newElement);
-            container.appendChild(div);
-        }
-        const report = () => { console.log("clicked"); }
-        document.getElementById('button').onclick = () => { report; switchText() };
-
-
-        document.querySelector('body').addEventListener("click", () => {
-            const alert = document.getElementById('alert');
-            alert.innerHTML = "Boo";
-            console.log("before")
-            
-            setTimeout(() => {
-                alert.innerHTML = "";
-                console.log("in")
-            }, 3000);
-
-            console.log("after")
-
+       const input = document.getElementById("name");
+       input.addEventListener("input",()=>{
+            console.log(input.value);
         })
+
     </script>
 </body>
 
